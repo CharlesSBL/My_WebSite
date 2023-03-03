@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+body {
+  overflow-y: scroll;
+  font-family: "Lato", sans-serif;
+  min-height: 100vh;
+
+  background: rgb(56, 33, 0);
+  background: linear-gradient(-45deg, #409d8c, #000000, #000000, #ff3c00);
+  animation: gradient 40s ease infinite;
+  background-size: 400% 400%;
+
+  &::after {
+    content: "";
+    position: fixed;
+
+    top: 0;
+    left: calc(50% - 700px);
+    // width: 100%;
+    width: 1400px;
+    height: 100%;
+    z-index: -1;
+    background: rgba(149, 255, 222, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(13.9px);
+    -webkit-backdrop-filter: blur(13.9px);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// /* width */
+::-webkit-scrollbar {
+  height: 12px;
+  width: 0.3rem;
+  background: rgba(0, 0, 0, 1);
+}
+
+// /* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--btn-primary) !important;
+}
+
+// /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--btn-primary) !important;
+}
+
+// /* CHROME */
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  -webkit-border-radius: 1rem;
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
